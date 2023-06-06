@@ -36,7 +36,7 @@ Base.metadata.create_all(engine)
 
 #sukuriam norimus objektus. Kolkas taip, veliau ziuresim :)
 
-user1 = User(name='John Smith', email='blabla@gmail.com')
+user1 = User(name='Petras Boruta', email='blabla@gmail.com')
 user2 = User(name='Tomas Vaitkus', email='tomas.vaitkus@gmail.com')
 user3 = User(name='Vygandas Vaitkus', email='vygandas.vaitkus@gmail.com')
 user4 = User(name='Juozapas Kazkoks', email='juozapas.kazkas@gmail.com')
