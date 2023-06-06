@@ -22,7 +22,7 @@ class Car(Base):
 
     id = Column(Integer, primary_key=True)
     brand = Column(String)
-    plate_nr = Column(String)  # Corrected column definition
+    plate_nr = Column(String) 
     user_id = Column(Integer, ForeignKey('users.id'))
     year = Column(String)
     user = relationship('User', back_populates='car')
@@ -44,7 +44,7 @@ car7 = Car(brand='BMW', plate_nr='qqq998',user_id=2, year='1985')
 car8 = Car(brand='Fiat', plate_nr='wwq963',user_id=2, year='1985')
 car9 = Car(brand='Fiat 500', plate_nr='LAA489',user_id=2, year='1985')
 
-# Add objects to the session and commit changes
+# sukraunam objektus i sesija ir uzcommitinam
 session.add_all([user1, user2, user3, user4, car1, car2, car3, car4, car5, car6, car7, car8, car9])
 session.commit()
 
