@@ -3,12 +3,14 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship, sessionmaker
 
+# Susikuriam duomenu baze (engine) ir sesija
 engine = create_engine('sqlite:///L:/OOP/testing_db.db', echo=True)
 Session = sessionmaker(bind=engine)
 session = Session()
 
 Base = declarative_base()
 
+#sukuriam klases norimom lentelem
 class User(Base):
     __tablename__ = 'users'
 
@@ -27,7 +29,12 @@ class Car(Base):
     year = Column(String)
     user = relationship('User', back_populates='car')
 
+
+# sukuriam lenteles duomenu bazeje
 Base.metadata.create_all(engine)
+
+
+#sukuriam norimus objektus. Kolkas taip, veliau ziuresim :)
 
 user1 = User(name='John Smith', email='blabla@gmail.com')
 user2 = User(name='Tomas Vaitkus', email='tomas.vaitkus@gmail.com')
