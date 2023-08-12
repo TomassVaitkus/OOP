@@ -1,9 +1,7 @@
-from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from main import Car, User  
+from main import Car, User, engine
 import pandas as pd
 
-engine = create_engine('sqlite:///L:/OOP/testing_db.db', echo=True)
 Session = sessionmaker(bind=engine)
 session = Session()
 
